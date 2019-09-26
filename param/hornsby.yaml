@@ -1,0 +1,77 @@
+
+
+hornsby_lidar:
+  # others... toddler, cactus, 
+  site_list:      [trail, slope, baby, mesquite, oak, field, field_two, field_three, loki, welder, trail_two, hell, slope_two, slope_three, johnson, slope_four, who_knows, turnabout]
+  trail:
+    northing:     3345210.7
+    easting:      629598.2
+    radius:       10
+  slope:
+    northing:     3345210.7
+    easting:      629598.2
+    radius:       10
+  baby:
+    northing:     3345210.7
+    easting:      629598.2
+    radius:       10
+  mesquite:
+    northing:     3345210.7
+    easting:      629598.2
+    radius:       10
+  oak:
+    northing:     3345210.7
+    easting:      629598.2
+    radius:       10
+  field:
+    northing:     3345210.7
+    easting:      629598.2
+    radius:       10
+  field_two:       
+    northing:     3345210.7
+    easting:      629598.2
+    radius:       10
+  field_three:
+    northing:     3345210.7
+    easting:      629598.2
+    radius:       10
+  loki:
+    northing:     3345210.7
+    easting:      629598.2
+    radius:       10
+  welder:
+    northing:     3345210.7
+    easting:      629598.2
+    radius:       10
+  trail_two:
+    northing:     3345210.7
+    easting:      629598.2
+    radius:       10
+  hell:
+    northing:     3345210.7
+    easting:      629598.2
+    radius:       10
+  slope_two:
+    northing:     3345210.7
+    easting:      629598.2
+    radius:       10
+  slope_three:       
+    northing:     3345210.7
+    easting:      629598.2
+    radius:       10
+  johnson:
+    northing:     3345210.7
+    easting:      629598.2
+    radius:       10
+  slope_four:
+    northing:     3345210.7
+    easting:      629598.2
+    radius:       10
+  who_knows:
+    northing:     3345210.7
+    easting:      629598.2
+    radius:       10
+  turnabout:       
+    northing:     3345210.7
+    easting:      629598.2
+    radius:       10

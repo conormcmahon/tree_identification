@@ -1,0 +1,22 @@
+
+
+<launch>
+
+  <node     	
+	  	name    = "pcd_to_bag"	
+  		pkg     = "tree_identification"
+  		type    = "pcd_to_bag"
+  		output  = "screen"
+	>
+		<param 
+			name = "pcd_name"
+			value = "/home/conor/SERDP/data/vandenberg/input/lidar.pcd" /> <!--"/home/conor/ros_data/trees/Aerial Lidar/Raw_Data/BFL/d1.pcd" /-->
+    	<param 
+			name = "bag_name"
+			value = "/home/conor/SERDP/data/vandenberg/input/lidar.bag" /> <!--"/home/conor/ros_data/trees/Aerial Lidar/Bags/BFL/d1.bag" /-->
+		<param 
+			name = "bag_topic"
+			value = "lidar" />
+	</node>
+
+</launch>

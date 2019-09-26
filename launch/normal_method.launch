@@ -1,0 +1,61 @@
+
+
+<launch>
+
+  <node     	
+	  name    = "normal_method"	
+  	pkg     = "tree_identification"
+  	type    = "normal_method"
+  	output  = "screen"
+	>
+		<param 
+			name = "previous_exponent"
+			value = "0" />
+		<param 
+			name = "new_exponent"
+			value = "0" />
+    	<param 
+			name = "bag_name"
+			value = "/home/conor/ros_data/trees/Aerial Lidar/Subset Scenes/Hornsby/b3.bag" />
+		<param 
+			name = "bag_topic"
+			value = "subset_lidar" />
+	    <param 
+	      name = "leaf_size"
+	      value = "0.05" />
+	    <param 
+	      name = "veg_intensity_threshold"
+	      value = "50" />
+	    <param 
+	      name = "veg_normal_threshold"
+	      value = "0.1" />
+	    <param 
+	      name = "dem_pixel_size"
+	      value = "1.0" />
+	    <param 
+	      name = "dem_pixel_size_coarse"
+	      value = "15" />
+	    <param 
+	      name = "cluster_tolerance"
+	      value = "1.2" />
+	    <param 
+	      name = "reattachment_search_radius"
+	      value = "3.0" />
+	    <param 
+	      name = "mls_radius"
+	      value = "3.0" />
+	    <param 
+	      name = "image_scale_min_height"
+	      value = "155" />
+	    <param 
+	      name = "image_scale_max_height"
+	      value = "205" />
+	    <param 
+	      name = "gap_filling_radius"
+	      value = "2.5" />
+	    <param 
+	      name = "mls_radius"
+	      value = "3.0" />
+	</node>
+
+</launch>

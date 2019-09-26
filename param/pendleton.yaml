@@ -1,0 +1,9 @@
+
+
+hornsby_lidar:
+  # others... toddler, cactus, 
+  site_list:      [trail]
+  trail:
+    northing:     3345210.7
+    easting:      629598.2
+    radius:       10

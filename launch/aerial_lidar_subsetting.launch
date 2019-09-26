@@ -1,0 +1,55 @@
+
+
+<launch>
+
+  <node     	
+	  	name    = "aerial_lidar"	
+  		pkg     = "tree_identification"
+  		type    = "aerial_lidar_subsetting"
+  		output  = "screen"
+	>
+		<param 
+			name = "from_pcd"
+			value = "false" />
+    	<param 
+			name = "bag_name"
+			value = "/home/conor/ros_data/trees/Aerial Lidar/Bags/BFL/a4.bag" />
+		<param 
+			name = "bag_topic"
+			value = "lidar" />
+		<param 
+			name = "load_second_bag"
+			value = "true" />
+		<param 
+			name = "bag_name_two"
+			value = "/home/conor/ros_data/trees/Aerial Lidar/Bags/BFL/b3.bag" />
+		<param 
+			name = "bag_topic_two"
+			value = "lidar" />
+		<param 
+			name = "load_third_bag"
+			value = "true" />
+		<param 
+			name = "bag_name_three"
+			value = "/home/conor/ros_data/trees/Aerial Lidar/Bags/BFL/d1.bag" />
+		<param 
+			name = "bag_topic_three"
+			value = "lidar" />
+		<param
+			name = "northing_center"
+			value = "3350829.65" />
+		<param
+			name = "easting_center"
+			value = "617382.30" />
+		<param
+			name = "northing_radius"
+			value = "500" />
+		<param
+			name = "easting_radius"
+			value = "500" />
+    <param 
+      name = "leaf_size"
+      value = "0.05" />
+	</node>
+
+</launch>

@@ -1,0 +1,154 @@
+
+
+
+// template on number of spectral bands? maybe also presence of intensity?
+
+class VegetationPoint
+{
+	float[3] point; 		// xyz
+	int? intensity; 		// lidar return
+	int[BAND_NUM] spectral; // spectral data, potentially including RGB
+	float height; 			// above ground (DEM)
+}
+
+
+
+// template on input type? inclusion of color, spectroscopy, intensity
+
+struct SceneLimits
+{
+	float pixel_size;			// UTM units
+	float[4] image_limits;		// values in UTM easting/northing
+	int image_wdt;
+	int image_hgt;
+}
+
+class LandScene
+{
+	typedef typename pcl::PointCloud<PointXYZINormal>::Ptr PCP;
+	typedef typename pcl::PointCloud<VegetationPoint>::Ptr VCP;
+
+public: 
+	LandScene();
+
+	// *** Insert Inputs ***
+	inputLAS(std::string las_file_name);
+	inputPCD(std::string pcd_file_name);
+	inputROSBAG(std::string bag_file_name);
+	inputTIF(std::string dem_file_name, std::string dsm_file_name);
+
+	// *** Calculation ***
+	evaluateScene();
+	paintDepthImages();
+	
+	// *** Get Outputs ***
+	getClouds(pcl::PointCloud<PointXYZINormal>::Ptr );
+	getImages(cv_bridge::CvImgPtr dem_image, cv_bridge::CvImgPtr dsm_image, cv_bridge::CvImgPtr chm_image);
+
+	// *** Publish Outputs ***
+	publishClouds();
+	publishImages();
+
+private:
+	SceneLimits scene_limits_;
+
+	// *** PCL Clouds ***
+	PCP input_cloud_;		// directly from LAS
+	VCP vegetation_cloud_;	// all vegetation points in input
+
+	// *** Raster Images ***
+	// depth, spectral data, normals? water boolean for DEM
+	cv_bridge::CvImgPtr dem_image_;
+	cv_bridge::CvImgPtr dsm_image_;
+	cv_bridge::CvImgPtr chm_image_;
+	
+	// *** Point List Images ***
+	//   These are matrices the same size as the images in which each entry
+	//   contains a list of all the points in that pixel. 
+	std::vector< std::vector< std::vector<int> > > point_raster_list_;				// all input points, by pixel
+	std::vector< std::vector< std::vector<int> > > vegetation_point_raster_list_; 	// vegetation points, by pixel 
+
+	// *** PCL PointCloud Rasters ***
+	//   Possibly keep these populated? mostly useful for outputing in RViz
+	PCP dem_cloud_;
+	PCP dsm_cloud_;
+	PCP chm_cloud_;
+
+	// *** Internal Calculations ***
+	getSceneLimits();
+	splitToPixels();
+	simpleDEM();
+	clusterFilterDEM();
+	waterEstimation();
+	simpleDSM();
+	simpleCHM();
+}
+
+LandScene::evaluateScene()
+{
+	getSceneLimits();
+	splitToPixels();
+	simpleDEM();
+	clusterFilterDEM();
+	waterEstimation();
+	simpleDSM();
+	simpleCHM();
+}
+
+
+// -------- Get Scene Limits --------
+// Determine limits in northing/easting of scene and image size
+getSceneLimits()
+{
+	
+}
+
+// -------- Split To Pixels --------
+// Create list of point indices within each pixel
+template typename<PointType>
+splitToPixels(pcl::PointCloud<PointType>::Ptr input_cloud, std::vector< std::vector< std::vector<int> > > point_raster_list)
+{
+	
+}
+
+// -------- Simple DEM --------
+// Estimate ground points in each pixel
+simpleDEM()
+{
+	
+}
+
+// -------- DEM Filtering --------
+// DEM Filtering
+clusterFilterDEM()
+{
+	// DEM cluster extraction, several times, add em up
+}
+
+// -------- Water Extraction --------
+// Water Extraction
+waterEstimation()
+{
+	
+}
+
+// -------- Simple DSM --------
+// Find highest points in each pixel
+simpleDSM()
+{
+	
+}
+
+// -------- Simple CHM --------
+// Determine height of non-ground structures in each pixel
+simpleCHM()
+{
+	
+}
+
+// -------- Paint Depth Image --------
+// Colorize Depth Images
+paintDepthImage()
+{
+	
+}
